@@ -114,7 +114,13 @@ $ nix-shell -p rquickshare
 Limitations
 --------------------------
 
-- **Wi-Fi LAN only**. Your devices need to be on the same network for this app to work.
+- **Receiving no longer requires the same Wi-Fi** (Linux, experimental). With the
+  BLE receiver a phone can discover and connect to this device over Bluetooth LE
+  without both first being on the same network; the transfer then upgrades to
+  Wi-Fi LAN for speed, and falls back to (slower) BLE when no shared network is
+  available.
+- **Sending still uses Wi-Fi LAN.** Discovering a device to send *to* is done over
+  mDNS, so the target must be reachable on the same network.
 
 FAQ
 --------------------------
